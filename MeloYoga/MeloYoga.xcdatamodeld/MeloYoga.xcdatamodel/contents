@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="22G74" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Course" representedClassName=".Course" syncable="YES" codeGenerationType="class">
+        <attribute name="endTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="startTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CourseOfWeek" inverseName="child" inverseEntity="CourseOfWeek"/>
+        <relationship name="students" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="booked" inverseEntity="User"/>
+    </entity>
+    <entity name="CourseOfWeek" representedClassName=".CourseOfWeek" syncable="YES" codeGenerationType="class">
+        <attribute name="coach" optional="YES" attributeType="String"/>
+        <attribute name="cred" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="endTime" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="startTime" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="weekday" optional="YES" attributeType="String"/>
+        <relationship name="child" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Course" inverseName="parent" inverseEntity="Course"/>
+    </entity>
+    <entity name="Package" representedClassName=".Package" syncable="YES" codeGenerationType="class">
+        <attribute name="cost" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="expiry" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="totalCredit" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="packages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PurchasedPackage" inverseName="packageType" inverseEntity="PurchasedPackage"/>
+    </entity>
+    <entity name="PurchasedPackage" representedClassName=".PurchasedPackage" syncable="YES" codeGenerationType="class">
+        <attribute name="expDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="purDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="remainingCred" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="buyer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="purchased" inverseEntity="User"/>
+        <relationship name="packageType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Package" inverseName="packages" inverseEntity="Package"/>
+    </entity>
+    <entity name="User" representedClassName=".User" syncable="YES" codeGenerationType="class">
+        <attribute name="creds" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="icon" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="login" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="phone" optional="YES" attributeType="String"/>
+        <attribute name="pw" optional="YES" attributeType="String"/>
+        <relationship name="booked" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Course" inverseName="students" inverseEntity="Course"/>
+        <relationship name="purchased" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="PurchasedPackage" inverseName="buyer" inverseEntity="PurchasedPackage"/>
+    </entity>
+</model>

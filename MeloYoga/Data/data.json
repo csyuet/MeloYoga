@@ -1,0 +1,44 @@
+[
+    {
+        "id": 0,
+        "name": "Spinnging Hammock",
+        "coach": "Rain Mo",
+        "cred": 6,
+        "type": "Aerial"
+    },
+    {
+        "id": 1,
+        "name": "Hatha Yoga",
+        "coach": "Valetta Cheung",
+        "cred": 4,
+        "type": "Yoga"
+    },
+    {
+        "id": 2,
+        "name": "Wheel Yoga",
+        "coach": "Rain Mo",
+        "cred": 4,
+        "type": "Yoga"
+    },
+    {
+        "id": 3,
+        "name": "Deep Stretch",
+        "coach": "Katia Kwok",
+        "cred": 4,
+        "type": "Yoga"
+    },
+    {
+        "id": 4,
+        "name": "Hoop",
+        "coach": "Katia Kwok",
+        "cred": 6,
+        "type": "Aerial"
+    },
+    {
+        "id": 5,
+        "name": "Aerial Yoga",
+        "coach": "Valetta Cheung",
+        "cred": 5,
+        "type": "Aerial"
+    }
+]

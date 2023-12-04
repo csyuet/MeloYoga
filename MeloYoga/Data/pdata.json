@@ -1,0 +1,39 @@
+
+[
+    {
+        "id": 0,
+        "cost": 888,
+        "totalCredit": 30,
+        "expiry": 1
+    },
+    {
+        "id": 1,
+        "cost": 1388,
+        "totalCredit": 50,
+        "expiry": 1
+    },
+    {
+        "id": 2,
+        "cost": 2188,
+        "totalCredit": 80,
+        "expiry": 3
+    },
+    {
+        "id": 3,
+        "cost": 2688,
+        "totalCredit": 100,
+        "expiry": 4
+    },
+    {
+        "id": 4,
+        "cost": 4788,
+        "totalCredit": 180,
+        "expiry": 6
+    },
+    {
+        "id": 5,
+        "cost": 7888,
+        "totalCredit": 300,
+        "expiry": 12
+    }
+]
