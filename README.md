@@ -7,3 +7,6 @@ Class booking mobile app for a Yoga Studio
 -	Class booking and canceling
 -	In-app purchase
 -	Record history tracking
+
+### User Guide:
+- Use Xcode Simulator
